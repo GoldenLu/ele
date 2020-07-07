@@ -175,6 +175,7 @@
                 //上传头像
                 if (this.userInfo) {
                     let input = document.querySelector('.profileinfopanel-upload')
+                    console.log(input)
                     let data = new FormData();
                     data.append('file', input.files[0]);
                     try{

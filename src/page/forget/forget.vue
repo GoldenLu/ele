@@ -136,6 +136,7 @@
                 }
                 // 发送重置信息
                 let res = await changePassword(this.phoneNumber, this.oldPassWord, this.newPassWord, this.confirmPassWord, this.mobileCode);
+                console.log(res)
                 if (res.message) {
                     this.showAlert = true;
                     this.alertText = res.message;

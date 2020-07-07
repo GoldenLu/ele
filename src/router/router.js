@@ -26,11 +26,11 @@ const forget = r => require.ensure([], () => r(require('../page/forget/forget'))
 // const foodDetail = r => require.ensure([], () => r(require('../page/shop/children/foodDetail')), 'foodDetail')
 // const shopDetail = r => require.ensure([], () => r(require('../page/shop/children/shopDetail')), 'shopDetail')
 // const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/children/shopSafe')), 'shopSafe')
-// const info = r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
-// const setusername = r => require.ensure([], () => r(require('../page/profile/children/children/setusername')), 'setusername')
-// const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
-// const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
-// const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
+const info = r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
+const setusername = r => require.ensure([], () => r(require('../page/profile/children/children/setusername')), 'setusername')
+const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
+const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
+const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
 // const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
 // const balanceDetail = r => require.ensure([], () => r(require('../page/balance/children/detail')), 'balanceDetail')
 // const benefit = r => require.ensure([], () => r(require('../page/benefit/benefit')), 'benefit')
@@ -138,31 +138,32 @@ export default [{
         {
             path: '/profile',
             component: profile,
-            // children: [{
-            //     path: 'info', //个人信息详情页
-            //     component: info,
-            //     children: [{
-            //         path: 'setusername',
-            //         component: setusername,
+            children: [{
+                path: 'info', //个人信息详情页
+                component: info,
+                children: [{
+                    path: 'setusername',
+                    component: setusername,
                 },
-                // {
-        //             path: 'address',
-        //             component: address,     //编辑地址
-        //             children:[{
-        //                 path:'add',
-        //                 component:add,
-        //                 children:[{
-        //                     path:'addDetail',
-        //                     component:addDetail
-        //                 }]
-        //             }]
-        //         }]
-        //     },
-        //     {
-        //         path: 'service', //服务中心
-        //         component: service,
-        //     },]
-        // },
+                {
+                    path: 'address',
+                    component: address,     //编辑地址
+                    children:[{
+                        path:'add',
+                        component:add,
+                        children:[{
+                            path:'addDetail',
+                            component:addDetail
+                        }]
+                    }]
+                }]
+            },
+            // {
+            //     path: 'service', //服务中心
+            //     component: service,
+            // },
+        ]
+        },
         //修改密码页
         {
             path: '/forget',
