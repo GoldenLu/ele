@@ -11,7 +11,7 @@
                     </section>
                 </header>
                 <p class="content_num">
-                    <span>0.00</span>
+                    <span>0.50</span>
                     <span>元</span>
                 </p>
                 <div class="promit_button">提现</div>

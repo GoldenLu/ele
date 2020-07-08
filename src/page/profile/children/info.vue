@@ -157,6 +157,7 @@
                 this.timer = setTimeout(() =>{
                     clearTimeout(this.timer)
                     this.show=false;
+
                 },200)
             },
             //退出登录
@@ -175,7 +176,6 @@
                 //上传头像
                 if (this.userInfo) {
                     let input = document.querySelector('.profileinfopanel-upload')
-                    console.log(input)
                     let data = new FormData();
                     data.append('file', input.files[0]);
                     try{
@@ -186,7 +186,7 @@
                             })
                         let res = await response.json();
                         if (res.status == 1) {
-                            this.userInfo.avatar = res.image_path;
+                            this.userInfo.avatar = res.image_path;                           
                         }
                     }catch (error) {
                         this.showAlert = true;

@@ -67,7 +67,7 @@
                 //获取历史红包
                 if (this.userInfo) {
                     this.expiredList = await getExpired(this.userInfo.user_id);
-                    this.showLoading = false;
+                    this.showLoading = true;
                     this.$nextTick(() => {
                         new BScroll('#scroll_section', {  
                             deceleration: 0.001,
